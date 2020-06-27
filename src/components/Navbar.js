@@ -5,6 +5,7 @@ import styles from "../css/navbar.module.css"
 import links from "../constants/links"
 import socialIcons from "../constants/social-icons"
 import logo from "../images/logo.svg"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Navbar = () => {
   const [isOpen, setNav] = useState(false)
@@ -31,7 +32,9 @@ const Navbar = () => {
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <Link to={item.path}>{item.text}</Link>
+                <AniLink fade to={item.path}>
+                  {item.text}
+                </AniLink>
               </li>
             )
           })}
