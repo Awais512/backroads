@@ -18,7 +18,7 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
-      resolve: `gatsby-source-fileSystem`,
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `image`,
         path: `${__dirname}/src/images/`,
