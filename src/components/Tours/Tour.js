@@ -35,14 +35,14 @@ const Tour = ({ tour }) => {
   )
 }
 
-Tour.propTypes = {
-  tour: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    country: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    days: PropTypes.number.isRequired,
-    images: PropTypes.arrayOff(PropTypes.Object).isRequired,
-  }),
-}
+// Tour.propTypes = {
+//   tour: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     country: PropTypes.string.isRequired,
+//     price: PropTypes.number.isRequired,
+//     days: PropTypes.number.isRequired,
+//     images: PropTypes.arrayOff(PropTypes.Object).isRequired,
+//   }),
+// }
 
 export default Tour
