@@ -1,3 +1,5 @@
+const path = require("path")
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const { data } = await graphql(`
@@ -11,5 +13,13 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  console.log(data)
+  data.tours.edges.forEach(({ node }) => {
+    createPage({
+      path: `tours/${node.slug}`,
+      component: path.resolve("./src/templates/tour-template.js"),
+      context: {
+        slug: node.slug,
+      },
+    })
+  })
 }
