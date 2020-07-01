@@ -17,7 +17,16 @@ const Blog = ({ data }) => {
       "embedded-asset-block": node => {
         return (
           <div className="rich">
-            <img width="400" src={node.data.target.fields.file["en-US"].url} />
+            <img width="600" src={node.data.target.fields.file["en-US"].url} />
+          </div>
+        )
+      },
+      "embedded-entry-block": node => {
+        const { title, images, text } = node.data.target.fields
+        return (
+          <div>
+            <img width={400} src={images["en-US"].fields.file["en-US"].url} />
+            {documentToReactComponents(text["en-US"])}
           </div>
         )
       },
